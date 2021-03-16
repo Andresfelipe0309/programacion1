@@ -1,0 +1,121 @@
+#Lista de temperaturas en grados centigrados
+Temperatura_Corporal = [36,37,38,35,36,38,37.5,38.2,41,37.4,38.6,39.1,40.3,33]
+
+
+#Opciones para escoger
+menu = '''
+Por favor ingrese alguna de estas opciones:
+            1- convertir las temperaturas de grados centigrados
+            2- Mostrar temperaturas saludables
+            3- Informacion de la temperatura maxima y minima
+            4- Para salir del programa
+: '''
+conversionGadosCentigrados = '''
+Por favor ingrese alguna de estas opciones:
+            K- Convertir a grados kelvin
+            F- Convertir a grados fahrenheit
+            C- Convertir a grados centigrados
+: '''
+
+#Mensajes de alerta ante un error posible 
+mensajeErrorNumero = 'Recuerde ingresar una opción válida 1,2,3,4'
+mensajeErrorTemperatura = 'Recuerde ingresar una opción válida K,F,C'
+
+#Mensajes en tiempo de ejecucion
+mensaja = 'Usted escogio la opción {}'
+mensajeDeGrados = 'No es necesaria la conversión'
+mensajeSalida = 'Gracias por utulizar el programa,fin.'
+
+
+
+
+opcion = int (input(menu))
+
+#Listas 
+listafahrenheit= []
+listakelvin = []
+listaClasificacion = []
+
+# Pasando a fahrenheit   F = (1°C*1.8)+32 
+for elemento in Temperatura_Corporal:
+    fahrenheit  = elemento * 1.8+32
+    listafahrenheit.append(fahrenheit)
+    
+
+
+# Pasando a Kelvin =(1°C+273.15)
+
+for elemento in Temperatura_Corporal:
+    kelvin  = elemento + 273.15
+    listakelvin.append(kelvin)
+    
+
+
+#Temperaturas saludables
+
+for elemento in Temperatura_Corporal:
+    clasificacion = ''
+    if (elemento < 36 ):
+        clasificacion = 'Hipotermia'
+    elif (elemento > 37.6 ):
+        clasificacion = 'Fiebre'
+    elif (elemento >= 36 and elemento <= 37):
+        clasificacion = 'Temperatura normal'
+    else:
+        clasificacion = ''
+    listaClasificacion.append(clasificacion)
+    
+   
+   
+#Calcular la temperatuta maxima y minima
+
+
+temperturaMaxima = max (Temperatura_Corporal)
+temperaturaMenor = min (Temperatura_Corporal)
+
+contador = 0
+
+for elemento in Temperatura_Corporal :
+    contador = contador+1
+Frecuencia= 24/contador
+#Este paso solo se hace para redondear el resultado
+ 
+
+        
+   
+ 
+#Menu
+while (opcion != 4) :
+    if (opcion == 1):
+        print(mensaja.format(1))
+        #Pregunta conversion
+        conversion = input(conversionGadosCentigrados)
+        if (conversion == 'F'):
+            print (listafahrenheit)
+        elif (conversion == 'K') :
+            print (listakelvin)
+        elif (conversion == 'C') :
+            print (mensajeDeGrados)
+            print (Temperatura_Corporal)
+        else :
+            print (mensajeErrorTemperatura)
+
+    elif (opcion == 2):
+        print(mensaja.format(2))
+        print (listaClasificacion)
+    elif (opcion == 3):
+        print(mensaja.format(3))
+        print ('La temperatura máxima es', temperturaMaxima)
+        print ('La temperatura minima es:', temperaturaMenor)
+        print ('La frecuencia de las tomas fue :  ', Frecuencia , 'Horas')
+         
+    else:
+        print (mensajeErrorNumero)
+
+
+    #Entrada de la variable de opcion
+    opcion = int (input(menu))
+
+
+#Salir del programa
+print (mensajeSalida)
