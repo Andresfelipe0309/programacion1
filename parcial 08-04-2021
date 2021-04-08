@@ -1,0 +1,103 @@
+numero1 = float(input("Digite el numero uno"))
+numero2 = float(input("Digite el numero dos"))
+numero3 = float(input("Digite el numero tres"))
+
+suma= numero1 + numero2 + numero3
+print ("El resultado de la suma es:",suma)
+
+resta= numero1 - numero2 - numero3
+print("El resultado de la resta es :",resta)
+
+multiplicacion= numero1*numero2*numero3
+print("El resultado de la multiplicacion es :",multiplicacion)
+
+division= numero1/numero2/numero3
+print("El resultado de la division es:",division)
+
+numero1 = float(input("Digite el numero uno"))
+numero2 = float(input("Digite el numero dos"))
+numero3 = float(input("Digite el numero tres"))
+
+suma= numero1 + numero2 + numero3
+print ("El resultado de la suma es:",suma)
+
+resta= numero1 - numero2 - numero3
+print("El resultado de la resta es :",resta)
+
+multiplicacion= numero1*numero2*numero3
+print("El resultado de la multiplicacion es :",multiplicacion)
+
+division= numero1/numero2/numero3
+print("El resultado de la division es:",division)
+
+potencia1= pow(numero1,numero2)
+potenciaTotal = pow(potencia1,numero3)
+
+print("El resultado de la potencia es:",potenciaTotal)
+
+# imprimir lista
+
+nombres=['juan','andres','francisco','santiago']
+numeros=[3,8,23,90]
+lenguajes=['java','python','c++','javaScript']
+
+print(nombres,numeros,lenguajes)
+
+#Area de un triangulo
+
+base = float(input("Digite la base del triangulo: "))
+altura = float(input("Digite la altura del triangulo: "))
+
+areaTriangulo= (base*altura)/2
+print("El area del triangulo es :",areaTriangulo)
+
+#promedio, maximo y minimo
+
+def minimo_maximo(numeros):
+    
+    menor=numeros[0]
+    mayor=numeros[0]
+    
+    for n in numeros:
+        if n < menor:
+            menor=n
+            
+        if n > mayor:
+            mayor=n
+   
+    return menor, mayor
+    
+datos=[5,8,3,4]
+
+    
+print("El minimo y maximo es: ",minimo_maximo(datos))
+
+
+
+suma=0
+i=0
+for elemento in datos:
+    suma+= elemento
+    i+=1
+
+promedio =  suma / i
+
+ 
+print("El promedio es : ",promedio)
+
+#sucesion
+
+numeroA=0
+numeroB=1
+numeroN = int(input('Ingrese el numero n de la sucesion de Fibonacci: '))
+print(numeroA, end=', ')
+print(numeroB, end=', ')
+
+for i in range(numeroN-2):
+    numeroC=numeroA+numeroB
+    if i == numeroN-3:
+        print (numeroC)
+    else:
+        print(numeroC,end=', ')
+        numeroA=numeroB
+        numeroB=numeroC
