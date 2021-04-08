@@ -1,3 +1,5 @@
+#funcion suma  resta multiplicacion etc
+
 numero1 = float(input("Digite el numero uno"))
 numero2 = float(input("Digite el numero dos"))
 numero3 = float(input("Digite el numero tres"))
@@ -67,16 +69,22 @@ def minimo_maximo(numeros):
    
     return menor, mayor
     
-datos=[5,8,3,4]
+n=[]
+print("digite su lista, para finalizar marque cero(no cuenta como dato en la lista)  ")
+numero=int(input("Ingrese un entero: "))
+while numero!=0:
+    n.append(numero)
+    numero=int(input("Ingrese un entero: "))
+print(n)
 
     
-print("El minimo y maximo es: ",minimo_maximo(datos))
+print("El minimo y maximo es: ",minimo_maximo(n))
 
 
 
 suma=0
 i=0
-for elemento in datos:
+for elemento in n:
     suma+= elemento
     i+=1
 
@@ -84,6 +92,7 @@ promedio =  suma / i
 
  
 print("El promedio es : ",promedio)
+
 
 #sucesion
 
