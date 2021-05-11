@@ -1,0 +1,66 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+snack1 = input("digite su snack favorito: ")
+costo1 = int(input("cuanto cuesta este snack: "))
+snack2 = input("digite su snack favorito: ")
+costo2 = int(input("cuanto cuesta este snack: "))
+snack3 = input("digite su snack favorito: ")
+costo3 = int(input("cuanto cuesta este snack: "))
+snack4 = input("digite su snack favorito: ")
+costo4 = int(input("cuanto cuesta este snack: "))
+snack5 = input("digite su snack favorito: ")
+costo5 = int(input("cuento cuesta este snack: "))
+
+lista_snacks = [snack1, snack2, snack3, snack4, snack5]
+lista_costos = [costo1, costo2, costo3, costo4, costo5]
+
+plt.bar(lista_snacks, lista_costos)
+plt.xlabel("snacks")
+plt.ylabel("costo")
+plt.title("grafica de barras")
+plt.savefig("barras.png")
+plt.show()
+
+
+cuidad1 = input("Digite su cuidad favorita numero 1: ")
+poblacion1 = int(input("digite la poblacion de esta cuidad: "))
+cuidad2 = input("Digite su cuidad favorita numero 2: ")
+poblacion2 = int(input("digite la poblacion de esta cuidad: "))
+cuidad3 = input("Digite su cuidad favorita numero 3: ")
+poblacion3 = int(input("digite la poblacion de esta cuidad: "))
+cuidad4 = input("digite su cuidad favorita numeror 4: ")
+poblacion4 = int(input("Digite la poblacion de esta cuidad: "))
+cuidad5 = input("digite su cuidad favorita numero 5: ")
+poblacion5 = int(input("digite la poblacion de esta cuidad: "))
+
+lista_cuidades = [cuidad1, cuidad2, cuidad3, cuidad4, cuidad5]
+lista_poblaciones = [poblacion1, poblacion2, poblacion3, poblacion4, poblacion5]
+
+plt.pie(lista_poblaciones,labels=lista_cuidades)
+plt.title("grafica de torta")
+plt.savefig("torta.png")
+plt.show()
+
+print("Definicion ecg (electrocardiograma): El electrocardiograma es una prueba que registra la actividad eléctrica del corazón que se produce en cada latido cardiaco. Esta actividad eléctrica se registra desde la superficie corporal del paciente y se dibuja en un papel mediante una representación gráfica o trazado, donde se observan diferentes ondas que representan los estímulos eléctricos de las aurículas y los ventrículos. .")
+print("Definicion ppg (fotopletismograma) es un método con el cual se puede conocer el volumen de un cuerpo, estableciendo la cantidad de luz que refleja..")
+
+df = pd.read_csv("ecg.csv", sep=";")
+valor_ecg = df["valor"]
+
+plt.plot(valor_ecg)
+plt.title("Grafica ECG")
+plt.xlabel("tiempo")
+plt.ylabel("mV")
+plt.savefig("ecg.png")
+plt.show()
+
+df2 = pd.read_csv("ppg.csv", sep=";")
+valor_ppg = df2["valor"]
+
+plt.plot(valor_ppg)
+plt.title("Grafica PPG")
+plt.xlabel("tiempo")
+plt.ylabel("volumen")
+plt.savefig("ppg.png")
+plt.show()
